@@ -30,15 +30,15 @@ app.post('/', (req, res) => {
 	if (level[0] === 0 || req.body.ans === String(answer[0])) {
 		level.push(level[0]+1);
 		if (level[0] < 10) {
-			let LEN = Math.floor(Math.random()*90+3);
+			let LEN = Math.floor(Math.random()*10+3);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*100));
 		}
 		else if (level[0] >= 10 && level[0] < 20) {
-			let LEN = Math.floor(Math.random()*500+10);
+			let LEN = Math.floor(Math.random()*90+10);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*500));
 		}
 		else if (level[0] >= 20 && level[0] < 30) {
-			let LEN = Math.floor(Math.random()*800+30);
+			let LEN = Math.floor(Math.random()*500+30);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*800));
 		}
 		else if (level[0] >= 30 && level[0] < 40) {
