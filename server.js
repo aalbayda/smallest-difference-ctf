@@ -53,6 +53,8 @@ app.post('/submit', (req, res) => {
 		}
 		else if (level[0] == 39) {
 			arr = "flag{youFuckingNerdHaveALlama}";
+			level.pop();
+			level.push(0);
 		}
 		level.shift()
 	}
@@ -61,6 +63,7 @@ app.post('/submit', (req, res) => {
 		level.push(0);
 		res.sendStatus(404);
 	}
+	console.log(findMinDiff(arr))
 });
 
 const server = app.listen(port, ()=>console.log('connected.'))
