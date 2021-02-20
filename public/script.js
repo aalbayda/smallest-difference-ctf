@@ -24,3 +24,5 @@ const submit = async () => {
 	document.querySelector('input').value = '';
 	document.querySelector('#round').innerHTML = `Round ${++round}`;
 }
+
+if(timer)setTimeout(()=>{window.alert("Too slow. Time's up!");submit();window.location.reload()}, 110000);
