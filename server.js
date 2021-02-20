@@ -70,3 +70,7 @@ setTimeout(()=>{
 	level.pop();
 	level.push(-1);
 },50000);
+setTimeout(()=>{
+	level.pop();
+	level.push(0);
+},60000);
