@@ -33,23 +33,23 @@ app.post('/', (req, res) => {
 	}
 	else if (level[0] === 0 || req.body.ans === String(answer[0])) {
 		level.push(level[0]+1);
-		if (level[0] < 10) {
+		if (level[0] < 5) {
 			let LEN = Math.floor(Math.random()*20+3);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*100));
 		}
-		else if (level[0] >= 10 && level[0] < 20) {
+		else if (level[0] >= 5 && level[0] < 10) {
 			let LEN = Math.floor(Math.random()*80+10);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*500));
 		}
-		else if (level[0] >= 20 && level[0] < 30) {
+		else if (level[0] >= 10 && level[0] < 15) {
 			let LEN = Math.floor(Math.random()*200+30);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*800));
 		}
-		else if (level[0] >= 30 && level[0] < 39) {
+		else if (level[0] >= 15 && level[0] < 20) {
 			let LEN = Math.floor(Math.random()*300+50);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*1000));
 		}
-		else if (level[0] == 39) {
+		else if (level[0] == 20) {
 			arr = "flag{youFuckingNerdHaveALlama}";
 		}
 		answer.pop();
@@ -69,8 +69,8 @@ const server = app.listen(port, ()=>console.log('connected.'))
 setTimeout(()=>{
 	level.pop();
 	level.push(-1);
-},50000);
+},30000);
 setTimeout(()=>{
 	level.pop();
 	level.push(0);
-},60000);
+},39000);
