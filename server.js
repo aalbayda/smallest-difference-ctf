@@ -69,15 +69,19 @@ app.post('/', (req, res) => {
 			let LEN = Math.floor(Math.random()*5000+500);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*5000));
 		}
-		else if (level[0] == 100) {
-			arr = "flag{godYouNerdHaveALlama}";
+
+		if (level[0] <= 100) {
+			answer.pop();
+			answer.push(findMinDiff(arr));
+			console.log(answer[0]);
+			level.shift();
 			res.json({arr});
 		}
-		answer.pop();
-		answer.push(findMinDiff(arr));
-		console.log(answer[0]);
-		level.shift();
-		res.json({arr});
+		else {
+			level.shift();
+			level.push(0);
+			res.json({arr:"flag{g0dYouN3rdHaveA114m4}"});
+		}
 	}
 	else {
 		level.shift();
