@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express()
 const port = process.env.PORT || 3000;
 const level = [0]
+const answer = [0];
 const findMinDiff = (arr) => {
 	arr.sort();
 	let diff = Infinity;
@@ -25,15 +26,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + '/public'));
 
 // Routes
-app.get('/start', (req,res) => {
-	let LEN = Math.floor(Math.random()*10+3);
-	arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*100));
-	res.json({arr});
-})
-
-app.post('/submit', (req, res) => {
-	let answer = findMinDiff(arr);
-	if (Number(req.body.ans)===answer) {
+app.post('/', (req, res) => {
+	if (level[0] === 0 || req.body.ans === String(answer[0])) {
 		level.push(level[0]+1);
 		if (level[0] < 10) {
 			let LEN = Math.floor(Math.random()*20+3);
@@ -53,17 +47,18 @@ app.post('/submit', (req, res) => {
 		}
 		else if (level[0] == 39) {
 			arr = "flag{youFuckingNerdHaveALlama}";
-			level.pop();
-			level.push(0);
 		}
-		level.shift()
+		answer.pop();
+		answer.push(findMinDiff(arr));
+		console.log(answer[0]);
+		level.shift();
+		res.json({arr});
 	}
 	else {
-		level.pop();
+		level.shift();
 		level.push(0);
 		res.sendStatus(404);
 	}
-	console.log(findMinDiff(arr))
 });
 
 const server = app.listen(port, ()=>console.log('connected.'))
