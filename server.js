@@ -27,7 +27,11 @@ app.use(express.static(__dirname + '/public'));
 
 // Routes
 app.post('/', (req, res) => {
-	if (level[0] === 0 || req.body.ans === String(answer[0])) {
+	if (level[0] === -1) {
+		arr = "Time's up! I can't give you anything.";
+		res.json({arr});
+	}
+	else if (level[0] === 0 || req.body.ans === String(answer[0])) {
 		level.push(level[0]+1);
 		if (level[0] < 10) {
 			let LEN = Math.floor(Math.random()*20+3);
@@ -64,6 +68,5 @@ app.post('/', (req, res) => {
 const server = app.listen(port, ()=>console.log('connected.'))
 setTimeout(()=>{
 	level.pop();
-	level.push(0);
-	server.close();
-},50000);
+	level.push(-1);
+},20000);
