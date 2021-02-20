@@ -69,4 +69,4 @@ const server = app.listen(port, ()=>console.log('connected.'))
 setTimeout(()=>{
 	level.pop();
 	level.push(-1);
-},20000);
+},50000);
