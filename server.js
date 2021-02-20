@@ -5,11 +5,11 @@ const port = process.env.PORT || 3000;
 const level = [0]
 const answer = [0];
 const findMinDiff = (arr) => {
-	let sorted = [...arr].sort();
+	let sortedArr = [...arr].sort();
 	let diff = Infinity;
-	for (let i = 0; i < arr.length-1; i++) {
-		if (arr[i+1] - arr[i] < diff) {
-			diff = arr[i+1] - arr[i];
+	for (let i = 0; i < sortedArr.length-1; i++) {
+		if (sortedArr[i+1] - sortedArr[i] < diff) {
+			diff = sortedArr[i+1] - sortedArr[i];
 		}
 	}
 	return diff;
