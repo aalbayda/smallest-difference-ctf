@@ -71,6 +71,7 @@ app.post('/', (req, res) => {
 		}
 		else if (level[0] == 100) {
 			arr = "flag{godYouNerdHaveALlama}";
+			res.json({arr});
 		}
 		answer.pop();
 		answer.push(findMinDiff(arr));
