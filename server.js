@@ -57,6 +57,8 @@ app.post('/submit', (req, res) => {
 		level.shift()
 	}
 	else {
+		level.pop();
+		level.push(0);
 		res.sendStatus(404);
 	}
 });
