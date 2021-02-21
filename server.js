@@ -8,8 +8,8 @@ const findMinDiff = (arr) => {
 	let sortedArr = [...arr].sort();
 	let diff = Infinity;
 	for (let i = 0; i < sortedArr.length-1; i++) {
-		if (sortedArr[i+1] - sortedArr[i] < diff) {
-			diff = sortedArr[i+1] - sortedArr[i];
+		if (Math.abs(sortedArr[i+1] - sortedArr[i]) < diff) {
+			diff = Math.abs(sortedArr[i+1] - sortedArr[i]);
 		}
 	}
 	return diff;
