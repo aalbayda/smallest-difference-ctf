@@ -9,7 +9,7 @@ const start = async () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ans:0})
 	}).then(res=>res.json()).then(data=>data["arr"]);
-	document.querySelector('#round').innerHTML = `Round ${++round}`;
+	document.querySelector('#round').innerHTML = `Round ${++round}/100`;
 }
 
 const submit = async () => {
@@ -22,7 +22,7 @@ const submit = async () => {
 		window.location.reload();
 	});
 	document.querySelector('input').value = '';
-	document.querySelector('#round').innerHTML = `Round ${++round}`;
+	document.querySelector('#round').innerHTML = `Round ${++round}/100`;
 }
 
 if(timer)setTimeout(()=>{window.alert("Too slow. Time's up!");submit();window.location.reload()}, 110000);
