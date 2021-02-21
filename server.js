@@ -38,7 +38,7 @@ app.post('/', (req, res) => {
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*500));
 		}
 		else if (level[0] >= 20 && level[0] < 30) {
-			let LEN = Math.floor(Math.random()*500+30);
+			let LEN = Math.floor(Math.random()*500+100);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*800));
 		}
 		else if (level[0] >= 30 && level[0] < 40) {
@@ -46,28 +46,28 @@ app.post('/', (req, res) => {
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*1000));
 		}
 		else if (level[0] >= 40 && level[0] < 50) {
-			let LEN = Math.floor(Math.random()*1600+50);
+			let LEN = Math.floor(Math.random()*2000+1000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*1500));
 		}
 		else if (level[0] >= 50 && level[0] < 60) {
-			let LEN = Math.floor(Math.random()*1800+50);
+			let LEN = Math.floor(Math.random()*3000+2000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*2500));
 		}
 		else if (level[0] >= 60 && level[0] < 70) {
-			let LEN = Math.floor(Math.random()*1900+500);
+			let LEN = Math.floor(Math.random()*5000+2000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*3000));
 		}
 		else if (level[0] >= 70 && level[0] < 80) {
-			let LEN = Math.floor(Math.random()*2000+500);
+			let LEN = Math.floor(Math.random()*10000+5000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*3500));
 		}
 		else if (level[0] >= 80 && level[0] < 90) {
-			let LEN = Math.floor(Math.random()*3500+500);
-			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*4000));
-		}
-		else if (level[0] >= 80 && level[0] < 100) {
-			let LEN = Math.floor(Math.random()*5000+500);
+			let LEN = Math.floor(Math.random()*15000+10000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*5000));
+		}
+		else if (level[0] >= 90 && level[0] < 100) {
+			let LEN = Math.floor(Math.random()*30000+15000);
+			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*10000));
 		}
 
 		if (level[0] <= 100) {
