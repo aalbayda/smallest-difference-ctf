@@ -62,11 +62,11 @@ app.post('/', (req, res) => {
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*3500));
 		}
 		else if (level[0] >= 80 && level[0] < 90) {
-			let LEN = Math.floor(Math.random()*15000+10000);
+			let LEN = Math.floor(Math.random()*30000+100000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*5000));
 		}
 		else if (level[0] >= 90 && level[0] < 99) {
-			let LEN = Math.floor(Math.random()*30000+15000);
+			let LEN = Math.floor(Math.random()*100000+50000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*10000));
 		}
 
