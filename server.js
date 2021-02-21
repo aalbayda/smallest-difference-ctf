@@ -86,7 +86,7 @@ app.post('/', (req, res) => {
 	else {
 		level.shift();
 		level.push(0);
-		res.json({arr:"Wrong answer!"});
+		res.sendStatus(404);
 	}
 });
 
