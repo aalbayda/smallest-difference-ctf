@@ -65,12 +65,12 @@ app.post('/', (req, res) => {
 			let LEN = Math.floor(Math.random()*15000+10000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*5000));
 		}
-		else if (level[0] >= 90 && level[0] < 100) {
+		else if (level[0] >= 90 && level[0] < 99) {
 			let LEN = Math.floor(Math.random()*30000+15000);
 			arr = Array.from(Array(LEN)).map(x=>Math.floor(Math.random()*10000));
 		}
 
-		if (level[0] <= 100) {
+		if (level[0] <= 99) {
 			answer.pop();
 			answer.push(findMinDiff(arr));
 			console.log(answer[0]);
@@ -80,7 +80,7 @@ app.post('/', (req, res) => {
 		else {
 			level.shift();
 			level.push(0);
-			res.json({arr:"flag{g0dYouN3rdHaveA114m4}"});
+			res.json({arr:["flag{g0dYouN3rdHaveA114m4}"]});
 		}
 	}
 	else {
